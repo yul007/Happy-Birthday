@@ -1,6 +1,6 @@
 // --- Password Gate ---
 (function passwordGate() {
-    const GATE_PASSWORD = '2007';
+    const GATE_PASSWORD = '20077';
     const gate = document.getElementById('password-gate');
     if (!gate) return;
 
