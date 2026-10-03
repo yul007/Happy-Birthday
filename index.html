@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-hidden">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,19 @@
   <meta property="og:image" content="https://placehold.co/1200x630/87CEEB/FFFFFF?text=A+Surprise+For+[Name]">
 </head>
 <body>
+<!-- Password Gate -->
+<div id="password-gate" class="fixed inset-0 z-[100] flex items-center justify-center bg-navy p-6">
+  <div class="w-full max-w-sm bg-white rounded-lg shadow-2xl p-8 text-center">
+    <h2 class="text-3xl font-anime text-sakura">Zona privada</h2>
+    <p class="mt-2 text-[#2c3e50]">Ingresa la contraseña para entrar</p>
+    <input id="password-input" type="password" inputmode="numeric" autocomplete="off" maxlength="8"
+      class="mt-6 w-full text-center text-2xl tracking-[0.3em] border-2 border-gray-300 rounded-lg p-3 focus:border-[#FFB7C5] focus:outline-none"
+      placeholder="••••">
+    <p id="password-error" class="hidden mt-3 text-sm text-red-500">Contraseña incorrecta, intenta otra vez ♥</p>
+    <button id="password-btn" class="mt-5 w-full bg-[#FFB7C5] hover:opacity-90 text-white text-lg font-semibold py-3 rounded-lg transition">Entrar</button>
+  </div>
+</div>
+
 <!-- Canvas for the falling cherry blossoms -->
 <canvas id="sakura-canvas"></canvas>
 

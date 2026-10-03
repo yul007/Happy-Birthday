@@ -1,3 +1,42 @@
+// --- Password Gate ---
+(function passwordGate() {
+    const GATE_PASSWORD = '2007';
+    const gate = document.getElementById('password-gate');
+    if (!gate) return;
+
+    const input = document.getElementById('password-input');
+    const button = document.getElementById('password-btn');
+    const error = document.getElementById('password-error');
+
+    function unlock() {
+        gate.classList.add('hidden');
+        document.documentElement.classList.remove('overflow-hidden');
+        sessionStorage.setItem('hb-unlocked', '1');
+    }
+
+    if (sessionStorage.getItem('hb-unlocked') === '1') {
+        unlock();
+        return;
+    }
+
+    function tryUnlock() {
+        if (input.value.trim() === GATE_PASSWORD) {
+            error.classList.add('hidden');
+            unlock();
+        } else {
+            error.classList.remove('hidden');
+            input.value = '';
+            input.focus();
+        }
+    }
+
+    button.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') tryUnlock();
+    });
+    input.focus();
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- Live Age Counter ---
