@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- Live Age Counter ---
-    const birthDate = new Date('2006-08-14T00:00:00');
+    const birthDate = new Date('2025-06-26T00:00:00');
     const countdownElement = document.getElementById('countdown');
 
     function updateAge() {
@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.y > canvas.height || this.x > canvas.width) {
                 this.x = -this.w;
                 this.y = Math.random() * canvas.height * 2 - canvas.height;
-                this.xSpeed = 1.5 + Math.random() * 2;
-                this.ySpeed = 1 + Math.random() * 1;
+                this.xSpeed = 0.02 + Math.random() * 2;
+                this.ySpeed = 0.01 + Math.random() * 1;
                 this.flip = Math.random();
             }
             ctx.globalAlpha = this.opacity;
